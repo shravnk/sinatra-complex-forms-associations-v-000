@@ -6,7 +6,7 @@ class PetsController < ApplicationController
   end
 
   get '/pets/new' do
-    @pets = pet.all
+    @owners = Owner.all
     erb :'/pets/new'
   end
 
@@ -25,7 +25,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets/:id' do
-
+    
     redirect to "pets/#{@pet.id}"
   end
 end
