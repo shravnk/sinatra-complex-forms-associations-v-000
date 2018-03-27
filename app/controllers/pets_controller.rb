@@ -12,7 +12,7 @@ class PetsController < ApplicationController
 
   post '/pets' do
     # binding.pry
-    @pet = Pet.create(params[:pet])
+    @pet = Pet.create(params[pet[name]])
     if !params['owner']['name'].empty?
       @pet.owners << Owner.create(name: params['owner']['name'])
     end
